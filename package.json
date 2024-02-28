@@ -1,0 +1,28 @@
+{
+  "name": "popupz",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A simple and customizable popup notification library for React and Next.js applications.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "build": "npx rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "popup",
+    "notification",
+    "modal",
+    "popupz",
+    "library"
+  ],
+  "author": "Vikas Ipar",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.12.0"
+  }
+}

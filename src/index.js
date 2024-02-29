@@ -12,7 +12,7 @@ export const PopzProvider = ({children}) => {
     popz: (theme, type, message, progressBar) => {
       setPopzTheme(theme.toLowerCase());
       setPopzType(type.toLowerCase());
-      setPopzMessage(message.toLowerCase());
+      setPopzMessage(message);
       setPopzProgressBar(progressBar.toLowerCase());
 
       setTimeout(() => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from './ProgressBar.jsx';
-import './index.css';
+import '../index.css';
 import { FaCircleCheck } from "react-icons/fa6";
 import { IoIosCloseCircle } from "react-icons/io";
 import { RiErrorWarningFill } from "react-icons/ri";
@@ -15,16 +15,16 @@ const Popz = ({theme, type, message, progressBar}) => {
   
   const themes = {
     light: {
-      colors: "text-gray-950 bg-white/80",
+      colors: "text-gray-950 bg-white/90",
       progessbarBgColor: "#cccccc",
       success: "#00ab66",
       error: "#ff2800",
-      warning: "#f4a460",
+      warning: "#fbc211",
       info: "#2a52be",
       default: "#eeff1b"
     },
     dark: {
-      colors: "text-white bg-gray-800/80",
+      colors: "text-white bg-gray-800/90",
       progessbarBgColor: "#4A5568",
       success: "#32cd32",
       error: "#ff6347",

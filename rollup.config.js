@@ -23,5 +23,5 @@ export default defineConfig({
             ]
         })
     ],
-    external: ["react", "react-dom", "react-icons", /\.css$/],
+    external: ["react", "react-dom", "react-icons/fa6", "react-icons/io", "react-icons/ri", "react-icons/bs", /\.css$/],
 })

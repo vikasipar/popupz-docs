@@ -7,7 +7,7 @@ export default defineConfig({
     input: "src/index.js",
     output: {
         dir: "dist",
-        format: "es",
+        format: "cjs",
         name: "popupz",
     },
     plugins: [
@@ -17,10 +17,11 @@ export default defineConfig({
         }),
         postcss({
             extract: true,
+            extract: 'index.css',
             plugins: [
                 tailwindcss,
             ]
         })
     ],
-    external: ["react", "react-dom", "react-icons"],
+    external: ["react", "react-dom", "react-icons", /\.css$/],
 })

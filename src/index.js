@@ -1,6 +1,5 @@
 import React, { useState, createContext, useContext } from 'react';
 import Popz from './components/Popz.jsx';
-import './index.css';
 const PopzContext = createContext();
 
 export const PopzProvider = ({children}) => {

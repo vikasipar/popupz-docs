@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from './ProgressBar.jsx';
-import './style.css';
+import './index.css';
 import { FaCircleCheck } from "react-icons/fa6";
 import { IoIosCloseCircle } from "react-icons/io";
 import { RiErrorWarningFill } from "react-icons/ri";

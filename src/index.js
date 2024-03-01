@@ -3,18 +3,23 @@ import Popz from './components/Popz.jsx';
 const PopzContext = createContext();
 
 export const PopzProvider = ({children}) => {
-  const [popzQueue, setPopzQueue] = useState([]);
-  const [id, setId] = useState(0);
+  const [popzTheme, setPopzTheme] = useState(null);
+  const [popzType, setPopzType] = useState(null);
+  const [popzMessage, setPopzMessage] = useState(null);
+  const [popzProgressBar, setPopzProgressBar] = useState(null);
 
   const popz = {
     popz: (theme, type, message, progressBar) => {
-      const newId = id + 1;
-      const newPopz = {id: newId, theme: theme.toLowerCase(), type: type.toLowerCase(), message: message, progressBar: progressBar.toLowerCase()};
-
-      setPopzQueue(prevQueue => [...popzQueue, newPopz]);
+      setPopzTheme(theme.toLowerCase());
+      setPopzType(type.toLowerCase());
+      setPopzMessage(message.toLowerCase());
+      setPopzProgressBar(progressBar.toLowerCase());
 
       setTimeout(() => {
-        setPopzQueue(prevQueue => prevQueue.filter(popz => popz.id !== newPopz.id));
+        setPopzTheme(null),
+        setPopzType(null);
+        setPopzMessage(null);
+        setPopzProgressBar(null);
       }, 3000);
     }
   };
@@ -22,15 +27,7 @@ export const PopzProvider = ({children}) => {
   return (
     <PopzContext.Provider value={popz}>
       {children}
-      {popzQueue.length > 0 && (
-        <div className='fixed top-[20px] right-[20px] min-w-52'>
-          {popzQueue.map((popzItem) => {
-            <div key={popzItem.id} className='my-1'>
-              <Popz theme={popzItem.theme} type={popzItem.type} message={popzItem.message} progressBar={popzItem.progressBar}/>
-            </div>
-          })}
-        </div>
-      )}
+      {popzType || popzTheme || popzMessage || popzProgressBar  && <Popz theme={popzTheme} type={popzType} message={popzMessage} progressBar={popzProgressBar}/>}
     </PopzContext.Provider>
   );
 };

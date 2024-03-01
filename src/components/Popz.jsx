@@ -19,7 +19,7 @@ const Popz = ({theme, type, message, progressBar}) => {
       progessbarBgColor: "#cccccc",
       success: "#00ab66",
       error: "#ff2800",
-      warning: "#fbc211",
+      warning: "#f4a460",
       info: "#2a52be",
       default: "#eeff1b"
     },
@@ -62,7 +62,7 @@ const Popz = ({theme, type, message, progressBar}) => {
   }, []);
 
   return (
-    <div className={`popz rounded-[10px] z-[9999] shadow-xl ${mood} ${progressBar==='true' ? 'pt-[7px] pb-[0.2px] px-1':'py-[9px] px-2'}`}>
+    <div className={`popz fixed top-[20px] right-[20px] min-w-52 rounded-[10px] z-[9999] shadow-xl ${mood} ${progressBar==='true' ? 'pt-[7px] pb-[0.2px] px-1':'py-[9px] px-2'}`}>
         <div className='text-center px-[5px] flex items-center gap-x-1 text-base'>
           <span style={{color: `${color}`}}>
             {icon}

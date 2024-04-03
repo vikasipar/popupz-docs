@@ -28,12 +28,30 @@
 .right-content{
   width: 25%;
   margin: 5px auto;
-  margin-top: 9rem;
+  margin-top: 5rem;
   margin-left: 2rem;
   position: fixed;
   right: 0px;
   border-left: 1px dashed rgb(177, 177, 177);
   color: rgb(139, 139, 141);
+}
+.right-content a{
+  color: rgb(150, 148, 148);
+  font-weight: normal;
+}
+@media screen and (max-width: 760px) {
+  .left-content{
+    width: 99%;
+    margin: 5px auto;
+    padding-right: 0rem;
+  }
+  .right-content{
+    display: none;
+  }
+  .app{
+    width: 100%;
+    margin-top: -20px;
+  }
 }
 .right-content li:hover{
   color: rgb(90, 88, 88);
@@ -61,6 +79,11 @@ h1 {
   line-height: 1.1;
 }
 
+h3{
+  font-weight: 500;
+  font-size: large;
+}
+
 .btn {
   border-radius: 8px;
   border: none;
@@ -81,12 +104,12 @@ button:hover {
 
 .heading{
   display: flex;
+  width: 20%;
   align-items: center;
 }
 
 .logo{
   width: 3rem;
-  margin-right: 0.2rem;
 }
 
 code{
@@ -99,13 +122,27 @@ code{
   font-size: 1rem;
   margin: auto 2rem;
 }
+@media screen and (max-width: 760px) {
+  code{
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    margin: auto 0;
+  }
+}
 
 .theme{
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 5rem;
+  row-gap: 1rem;
   margin-bottom: 3rem;
 }
 
+ul{
+  row-gap: 5px;
+  column-gap: 20px;
+}
 li{
   font-size: large;
 }

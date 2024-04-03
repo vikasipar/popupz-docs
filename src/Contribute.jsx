@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
+import './App.css';
 
 function Contribute() {
-    const [contributors, setContributors] = useState("");
+    const [contributors, setContributors] = useState([]);
 
     useEffect(() => {
         const fetchContributors = async () => {
@@ -13,15 +14,22 @@ function Contribute() {
               console.error('Error fetching contributors:', error);
             }
           };
-    })
+          fetchContributors();
+    }, []);
   return (
     <div>
-        <h2>Contribute</h2>
+        <h2 id='contribute'>Contribute</h2>
         <p>Your support ❤️ means a lot! Give us a ⭐️ on <a href='https://github.com/vikasipar/popupz'>GitHub</a>. Any suggestions are welcome!</p>
         <p>You can also find me on <a href='https://vikasipar.me' target='_blank'>vikasipar.me</a>.</p>
 
-        <h2>Contributors</h2>
-        <p>contributors</p>
+        <h2 style={{marginTop: "70px"}}>Contributors</h2>
+        <p className='contributors'>
+          {contributors.map((dev) => (
+            <a href={dev.html_url} target='_blank' id={dev.id}>
+              <img id='contributors' src={dev.avatar_url} alt={dev.login} title={dev.login} className='contributer-img' />
+            </a>
+          ))}
+        </p>
     </div>
   )
 }

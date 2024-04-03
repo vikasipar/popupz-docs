@@ -38,3 +38,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.contributers{
+  display: flex;
+  flex-wrap: wrap;
+}
+.contributer-img{
+  width: 4rem;
+  border-radius: 50%;
+  border: 2px solid rgb(167, 167, 167);
+}
